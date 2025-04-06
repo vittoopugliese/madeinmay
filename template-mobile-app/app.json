@@ -1,0 +1,90 @@
+{
+  "expo": {
+    "permissions": [
+      "CAMERA",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE",
+      "READ_EXTERNAL_STORAGE",
+      "MEDIA_LIBRARY"
+    ],
+    "name": "TemplateAppMobile",
+    "slug": "mobile-app",
+    "version": "0.1",
+    "orientation": "portrait",
+    "newArchEnabled": true,
+    "icon": "./assets/images/favicon.png",
+    "scheme": "inspections-mobile-app",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/adaptive-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#141414"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ttoriosoftware.scdownloaderapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryUsageDescription": "Allow FNGMobile to access your photos",
+        "NSCameraUsageDescription": "Allow FNGMobile to access your camera"
+      },
+      "config": {
+        "uploadMaxBytes": 104857600
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.ttoriosoftware.scdownloaderapp",
+      "versionCode": 55,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "MEDIA_LIBRARY"
+      ],
+      "config": {
+        "largeHeap": true
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/adaptive-icon.png",
+          "imageWidth": 254,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
+        }
+      ],
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "updates": {
+      "url": "https://u.expo.dev/665373f8-23a4-4de5-bb41-0ce7bfb91042"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "owner": "ttoriosoftware",
+    "assetBundlePatterns": ["**/*"]
+  }
+}
