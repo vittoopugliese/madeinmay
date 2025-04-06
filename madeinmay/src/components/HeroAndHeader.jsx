@@ -26,17 +26,18 @@ const HeroAndHeader = () => {
   };
 
   return (
-    <div className="hero-container">
+    <div className="hero-container" id="home">
       <header className={`header ${scrolled ? "scrolled" : ""}`}>
-        <div className="logo">MadeinMay</div>
+        <a href="#home" className="logo">MadeinMay</a>
+        
         <nav className="navigation">
           <ul>
-            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#sobre-mi">Sobre Mí</a></li>
             <li><a href="#reservas">Reservas</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
+        
         <div className="menu-toggle" onClick={handleMenuToggle}>
           <span></span>
           <span></span>

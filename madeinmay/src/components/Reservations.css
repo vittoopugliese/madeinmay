@@ -1,0 +1,203 @@
+/* Estilos para el componente de Reservas */
+.reservations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 800px;
+  background-color: var(--dark2);
+}
+
+.reservations-title {
+  font-size: 2rem;
+  color: #4a2b7e;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.calendar-container {
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Estilos para FullCalendar */
+.calendar-container .fc {
+  background-color: white;
+  border-radius: 8px;
+}
+
+.calendar-container .fc-toolbar-title {
+  font-size: 1.4rem;
+  color: #4a2b7e;
+}
+
+.calendar-container .fc-button {
+  background-color: #a67fe9;
+  border-color: #a67fe9;
+}
+
+.calendar-container .fc-button:hover {
+  background-color: #8a5dd3;
+  border-color: #8a5dd3;
+}
+
+.calendar-container .fc-button-active {
+  background-color: #4a2b7e !important;
+  border-color: #4a2b7e !important;
+}
+
+.calendar-container .fc-timegrid-slot {
+  height: 60px !important;
+}
+
+.calendar-container .fc-event {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.calendar-container .fc-event:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario de reserva */
+.booking-form-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.booking-form-container h3 {
+  color: #4a2b7e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.selected-slot-info {
+  background-color: #f4f0ff;
+  border-left: 4px solid #a67fe9;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: #4a2b7e;
+  border-radius: 0 4px 4px 0;
+}
+
+.booking-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #4a2b7e;
+}
+
+.form-control {
+  padding: 0.75rem;
+  border: 1px solid #d1c7eb;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #a67fe9;
+  box-shadow: 0 0 0 2px rgba(166, 127, 233, 0.2);
+}
+
+.submit-btn {
+  background-color: #a67fe9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background-color: #8a5dd3;
+}
+
+/* Estilos para las opciones de pago */
+.payment-options {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e0d8f5;
+  padding-top: 1.5rem;
+}
+
+.payment-options h4 {
+  color: #4a2b7e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.payment-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Estilos para botones de pago específicos */
+.paypal-button,
+.stripe-button,
+.mercadopago-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paypal-button:hover,
+.stripe-button:hover,
+.mercadopago-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .calendar-container .fc-toolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .calendar-container .fc-toolbar-chunk {
+    display: flex;
+    justify-content: center;
+  }
+
+  .payment-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .paypal-button,
+  .stripe-button,
+  .mercadopago-button {
+    width: 100%;
+    max-width: 250px;
+  }
+}

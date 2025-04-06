@@ -1,6 +1,6 @@
-import './App.css'
 import AboutMe from './components/AboutMe'
 import HeroAndHeader from './components/HeroAndHeader'
+import Reservations from './components/Reservations';
 
 function App() {
 
@@ -8,6 +8,7 @@ function App() {
     <div>
       <HeroAndHeader />
       <AboutMe />
+      <Reservations />
     </div>
   )
 }
