@@ -1,0 +1,54 @@
+.mercadopago-button-wrapper {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.mercadopago-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.mercadopago-button:hover {
+  opacity: 0.9;
+}
+
+.mercadopago-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.mp-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mp-error {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.mercadopago-button-container {
+  width: 100%;
+  margin-top: 10px;
+}

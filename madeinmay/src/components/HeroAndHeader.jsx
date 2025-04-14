@@ -46,13 +46,16 @@ const HeroAndHeader = () => {
       </header>
 
       <div className="hero-content">
-        <h1 className="hero-title">MadeinMay</h1>
-        <h2 className="hero-subtitle">Micaela</h2>
         <div className="hero-image"></div>
-        <p className="hero-tagline">
-          Descubre tu camino en las estrellas y el tarot, para una vida más plena y consciente.
-        </p>
-        <button className="cta-button">Reserva tu sesión</button>
+        <div>
+          <h1 className="hero-title">MadeinMay</h1>
+          <p className="hero-tagline">
+            Descubre tu camino en las estrellas y el tarot, para una vida más plena y consciente.
+          </p>
+          <a href="#reservas">
+            <button className="cta-button">Reserva tu sesión</button>
+          </a>
+        </div>
       </div>
     </div>
   );

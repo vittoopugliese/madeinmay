@@ -132,10 +132,8 @@
   background-color: #8a5dd3;
 }
 
-/* Estilos para las opciones de pago */
 .payment-options {
-  margin-top: 1.5rem;
-  border-top: 1px solid #e0d8f5;
+  margin: 0.5rem;
   padding-top: 1.5rem;
 }
 
@@ -151,6 +149,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1rem;
+  padding: 0 12rex ;
 }
 
 /* Estilos para botones de pago específicos */
@@ -190,7 +189,7 @@
   }
 
   .payment-buttons {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
   }
 
@@ -199,5 +198,51 @@
   .mercadopago-button {
     width: 100%;
     max-width: 250px;
+  }
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+  background-color: var(--secondary);
+  filter: drop-shadow(0 0 20px var(--primary));
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: -72px 0 #FFF inset;
+  }
+  100% {
+    box-shadow: 48px 0 #FFF inset;
+  }
+}
+
+.loader-small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ffffff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

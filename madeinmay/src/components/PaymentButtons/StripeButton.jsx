@@ -7,7 +7,7 @@ const StripeButton = ({amount, onSuccess}) => {
     setTimeout(() => {
       const mockPaymentId = "ST-" + Math.random().toString(36).substring(2, 12);
       onSuccess(mockPaymentId);
-    }, 2000);
+    }, 500);
   };
 
   return (
@@ -16,9 +16,9 @@ const StripeButton = ({amount, onSuccess}) => {
       onClick={handleStripePayment}
       style={{backgroundColor: "#6772e5", color: "#ffffff"}}>
       <img
-        src="/path-to-stripe-logo.png"
+        src="./stripe.svg"
         alt="Stripe"
-        style={{height: "24px"}}
+        style={{height: "24px", filter: "invert(1)"}}
         onError={(e) => {
           e.target.onerror = null;
           e.target.style.display = "none";

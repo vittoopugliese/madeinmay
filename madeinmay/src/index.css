@@ -29,11 +29,12 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  background-color: var(--dark2);
 }
 
 *::selection {
-  background-color: var(--dark2);
-  color: var(--secondary);
+  background-color: var(--secondary);
+  color: white;
 }
 
 a {

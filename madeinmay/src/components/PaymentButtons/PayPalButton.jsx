@@ -7,7 +7,7 @@ const PayPalButton = ({amount, onSuccess}) => {
     setTimeout(() => {
       const mockPaymentId = "PP-" + Math.random().toString(36).substring(2, 12);
       onSuccess(mockPaymentId);
-    }, 2000);
+    }, 500);
   };
 
   return (
@@ -16,7 +16,7 @@ const PayPalButton = ({amount, onSuccess}) => {
       onClick={handlePayPalPayment}
       style={{backgroundColor: "#ffffff", color: "#003087"}}>
       <img
-        src="/path-to-paypal-logo.png"
+        src="./paypal.svg"
         alt="PayPal"
         style={{height: "24px"}}
         onError={(e) => {

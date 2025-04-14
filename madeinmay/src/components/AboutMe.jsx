@@ -11,7 +11,7 @@ const ServiceCard = ({ title, description, duration, modality, includes }) => {
         <p><span>Modalidad:</span> {modality}</p>
         <p><span>Incluye:</span> {includes}</p>
       </div>
-      <button className="service-button">Reservar ahora</button>
+      {/* <button className="service-button">Reservar ahora</button> */}
     </div>
   );
 };
@@ -20,7 +20,7 @@ export default function AboutMe() {
   return (
     <section className="about-section" id="sobre-mi">
       <div className="about-container">
-        <h2 className="section-title">Sobre MadeInMay</h2>
+        <h2 className="section-title">Sobre mi</h2>
         <div className="about-content">
           <div className="about-image">
             <div className="profile-image"></div>
