@@ -150,6 +150,33 @@
   text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Animación para que el hada flote */
+@keyframes floatFairy {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Animación para que el círculo pulse */
+@keyframes pulseCircle {
+  0% {
+    filter: drop-shadow(0 0 70px rgba(116, 94, 243, 0.54));
+  }
+  50% {
+    filter: drop-shadow(0 0 80px rgba(116, 94, 243, 0.954));
+  }
+  100% {
+    filter: drop-shadow(0 0 70px rgba(116, 94, 243, 0.54));
+  }
+}
+
+/* Aplicar animación al círculo */
 .hero-image {
   width: 300px;
   height: 300px;
@@ -160,18 +187,22 @@
   );
   border-radius: 50%;
   margin: 0 auto 2rem;
-  box-shadow: 0 0 30px rgba(116, 94, 243, 0.6);
   position: relative;
   overflow: hidden;
+  animation: pulseCircle 1.5s ease-in-out infinite;
 }
 
+/* Aplicar animación al hada */
 .hero-image::before {
   content: "";
+  scale: 1.25;
   position: absolute;
-  background-image: url("/mic1.png");
-  background-size: cover;
   inset: 5px;
+  top: 16px;
+  background-image: url("/logo2.PNG");
+  background-size: cover;
   border-radius: 100%;
+  animation: floatFairy 3s ease-in-out infinite;
 }
 
 .hero-tagline {

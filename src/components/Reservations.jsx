@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -15,6 +15,14 @@ const Reservations = () => {
   const [loading, setLoading] = useState(false);
   const [contactInfo, setContactInfo] = useState({name: "", email: "", phone: ""});
   const [availableSlots, setAvailableSlots] = useState([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const checkIfMobile = () => setIsMobile(window.innerWidth < 768);
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
 
   // useEffect(() => {
     // getEvents();
@@ -122,21 +130,46 @@ const Reservations = () => {
   //   };
   // };
 
+  const handleDateClick = (info) => {
+    // Para dispositivos móviles, crear un slot de 1.5 horas al hacer tap en una fecha
+    const start = new Date(info.date);
+    const end = new Date(start);
+    end.setMinutes(end.getMinutes() + 90); // 1.5 horas (90 minutos)
+    
+    setSelectedSlot({start, end});
+  };
+
   return (
     <div className="reservations-container" id="reservas">
       <h2 className="reservations-title"></h2>
       <h2 className="section-title">Reserva tu Sesión</h2>
 
       <div className="calendar-container">
-        <FullCalendar events={availableSlots} select={handleSlotSelect}
+      <FullCalendar
+          events={availableSlots}
+          select={handleSlotSelect}
+          dateClick={handleDateClick}
           businessHours={{daysOfWeek: [1, 2, 3, 4, 5, 6], startTime: "09:00", endTime: "18:00"}}
           plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{left: "prev,next", center: "title", right: "today"}}
-          initialView="timeGridWeek" locale={esLocale}
-          slotMinTime="09:00:00" slotMaxTime="18:00:00"
-          allDaySlot={false} height="auto" hiddenDays={[0]}
-          selectable selectMirror eventColor="#a67fe9"
-          slotDuration="01:30:00" />
+          headerToolbar={{
+            left: "prev,next", 
+            center: "title", 
+            right: isMobile ? "timeGridDay,today" : "today"
+          }}
+          initialView={isMobile ? "timeGridDay" : "timeGridWeek"}
+          locale={esLocale}
+          slotMinTime="09:00:00"
+          slotMaxTime="18:00:00"
+          allDaySlot={false}
+          height="auto"
+          hiddenDays={[0]}
+          selectable={true}
+          selectMirror={true}
+          eventColor="#a67fe9"
+          slotDuration="01:30:00"
+          longPressDelay={0}
+          selectLongPressDelay={0}
+        />
       </div>
 
       {selectedSlot && (
